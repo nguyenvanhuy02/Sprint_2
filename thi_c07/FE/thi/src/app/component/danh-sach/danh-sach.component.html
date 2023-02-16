@@ -1,0 +1,111 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <h3 style="text-align: center;" class="mt-3 mb-3">Danh Sách Công Cụ Dụng Cụ</h3>
+      <div class="col-md-12 col-lg-3 col-xl-2 mt-2" >
+        <button class="btn btn-primary" routerLink="/themmoi">
+          <span class="text"> Thêm mới CCDC</span>
+        </button>
+      </div>
+      <div class="row" id="list-row">
+        <table id="customer_table" class="table table-striped table-bordered"
+               *ngIf="danhSachCCDC != null">
+          <thead>
+          <tr>
+            <th>STT</th>
+            <th>Mã CCDC</th>
+            <th>Tên CCDC</th>
+            <th>Hãng sản xuất</th>
+            <th>Đơn vị</th>
+            <th>Số lượng</th>
+            <th>Chức năng</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of danhSachCCDC.content; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{item.maCCDC}}</td>
+            <td>{{item.tenCCDC}}</td>
+            <td>{{item.hangSX}}</td>
+            <td>{{item.donVi}}</td>
+            <td>{{item.soLuong}}</td>
+            <td><button class="btn btn-danger" data-bs-toggle="modal" routerLink="/muon" >
+              <i class="fa-regular fa-trash-can delete-icon"></i> Mượn
+            </button></td>
+          </tr>
+          </tbody>
+        </table>
+        <h3 id="null-result-noti" *ngIf="danhSachCCDC == null">Không tìm thấy kết quả phù hợp</h3>
+      </div>
+
+      <!-- Phân trang -->
+      <div class="d-flex justify-content-between" id="last-row">
+        <div *ngIf="danhSachCCDC">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link"
+                                       [ngClass]="danhSachCCDC.first ? 'disabled': ''"
+                                       (click)="gotoPage(0)"> << </a></li>
+              <li class="page-item" *ngIf="danhSachCCDC.number - 2 > 0">
+                <a class="page-link" (click)="gotoPage(danhSachCCDC.number - 3)">{{danhSachCCDC.number - 2}}</a>
+              </li>
+              <li class="page-item" *ngIf="danhSachCCDC.number - 1 > 0">
+                <a class="page-link" (click)="gotoPage(danhSachCCDC.number - 2)">{{danhSachCCDC.number - 1}}</a>
+              </li>
+              <li class="page-item" *ngIf="danhSachCCDC.number > 0">
+                <a class="page-link" (click)="gotoPage(danhSachCCDC.number   - 1)">{{danhSachCCDC.number}}</a>
+              </li>
+
+              <li class="page-item active"><a class="page-link">{{danhSachCCDC.number + 1}}</a></li>
+
+              <li class="page-item" *ngIf="danhSachCCDC.number + 2 <= danhSachCCDC.totalPages">
+                <a class="page-link" (click)="gotoPage(danhSachCCDC.number + 1)">{{danhSachCCDC.number + 2}}</a>
+              </li>
+              <li class="page-item" *ngIf="danhSachCCDC.number + 3 <= danhSachCCDC.totalPages">
+                <a class="page-link" (click)="gotoPage(danhSachCCDC.number + 2)">{{danhSachCCDC.number + 3}}</a>
+              </li>
+              <li class="page-item" *ngIf="danhSachCCDC.number + 4 <= danhSachCCDC.totalPages">
+                <a class="page-link" (click)="gotoPage(danhSachCCDC.number + 3)">{{danhSachCCDC.number + 4}}</a>
+              </li>
+              <li class="page-item"><a class="page-link"
+                                       [ngClass]="danhSachCCDC.last ? 'disabled': ''"
+                                       (click)="gotoPage(danhSachCCDC.totalPages - 1)"> >> </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!--        <div>-->
+        <!--          <button class="btn btn-danger" data-bs-toggle="modal"-->
+        <!--                  (click)="sendToDeleteGroupModal()" data-bs-target="#deleteGroupModal"-->
+        <!--                  [disabled]="deleteIds.length == 0">-->
+        <!--            <i class="fa-regular fa-trash-can delete-icon"></i> Xoá-->
+        <!--          </button>-->
+        <!--        </div>-->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Delete Modal -->
+  <div class="modal fade" id="exampleModal"  tabindex="-1" role="dialog"
+       aria-labelledby="deleteModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Mượn CCDC</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-footer">
+            <button id="deleteCancel" class="btn btn-secondary" data-bs-dismiss="modal">Huỷ bỏ</button>
+            <button id="deleteAccept" class="btn btn-warning" data-bs-dismiss="modal"
+            >Đồng ý
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="card border-success mt-4">
+  <div class="card-body">
+    <h4 class="card-title">Thêm Mới CCDC</h4>
+    <form [formGroup]="rfCCDC" (ngSubmit)="onSubmit()">
+      <div class="col-md-12 col-lg-3 col-xl-2 mt-2" >
+        <button class="btn btn-primary" routerLink="/ccdc">
+          <span class="text"> Quay lại</span>
+        </button>
+      </div>
+      <div class="form-group mt-4">
+        <label>Mã CCDC:</label>
+        <input type="text" class="form-group" formControlName="maCCDC">
+        <div style="color: red"
+             *ngIf="rfCCDC.controls.maCCDC.invalid && rfCCDC.controls.maCCDC.touched ">
+          <span *ngIf="rfCCDC.controls.maCCDC.hasError('required') ">Mã không được trống.</span>
+        </div>
+      </div>
+      <div class="form-group mt-4">
+        <label>Tên CCDC:</label>
+        <input type="text" class="form-group" formControlName="tenCCDC">
+        <div style="color: red"
+             *ngIf="rfCCDC.controls.tenCCDC.invalid && rfCCDC.controls.tenCCDC.touched ">
+          <span *ngIf="rfCCDC.controls.tenCCDC.hasError('required') ">Tên không được trống.</span>
+        </div>
+      </div>
+      <div class="form-group mt-4">
+        <label>Hãng sản xuất:</label>
+        <input type="text" class="form-group" formControlName="hangSX">
+        <div style="color: red"
+             *ngIf="rfCCDC.controls.hangSX.invalid && rfCCDC.controls.hangSX.touched ">
+          <span *ngIf="rfCCDC.controls.hangSX.hasError('required') ">Hãng sản xuất không được trống.</span>
+        </div>
+      </div>
+      <div class="form-group mt-4">
+        <label>Đơn vị:</label>
+        <input type="text" class="form-group" formControlName="donVi">
+        <div style="color: red"
+             *ngIf="rfCCDC.controls.donVi.invalid && rfCCDC.controls.donVi.touched ">
+          <span *ngIf="rfCCDC.controls.donVi.hasError('required') ">Đơn vị không được trống.</span>
+        </div>
+      </div>
+      <div class="form-group mt-4">
+        <label>	Số lượng:</label>
+        <input type="text" class="form-group" formControlName="soLuong">
+        <div style="color: red"
+             *ngIf="rfCCDC.controls.soLuong.invalid && rfCCDC.controls.soLuong.touched ">
+          <span *ngIf="rfCCDC.controls.soLuong.hasError('required') ">Số lượng không được trống.</span>
+          <span *ngIf="rfCCDC.controls.soLuong.hasError('pattern') ">Số lượng là số nguyên dương.</span>
+        </div>
+      </div>
+      <div>
+        <button class="btn bg-primary mt-4" type="submit">Thêm Mới</button>
+      </div>
+    </form>
+  </div>
+</div>

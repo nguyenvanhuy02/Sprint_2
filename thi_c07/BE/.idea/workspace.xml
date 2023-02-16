@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="07e17733-0d7c-48d1-87c0-be6fa458080c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../cong_nghe_moi/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../cong_nghe_moi/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../cong_nghe_moi/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../cong_nghe_moi/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../prototype/facebook.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../prototype/facebook.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../prototype/prototypeLogin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../prototype/prototypeLogin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/controller/BookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/controller/ReaderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/model/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/model/Library.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/model/Reader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/repository/IBookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/repository/IReaderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/service/IBookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/service/IReaderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/service/impl/BookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/service/impl/ReaderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/app/model/book.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/app/model/library.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/app/model/pageReader.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/app/model/reader.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-grid.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-grid.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-grid.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-grid.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-reboot.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-reboot.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-reboot.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-reboot.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-utilities.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-utilities.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-utilities.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-utilities.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-utilities.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-utilities.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-utilities.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap-utilities.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/css/bootstrap.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/js/bootstrap.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/js/bootstrap.esm.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/js/bootstrap.esm.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/js/bootstrap.esm.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FE/demo/src/assets/bootstrap-5.0.2-dist/js/bootstrap.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../du_an/C0722G1-Repo-BE-main/C0722G1-Repo-BE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../du_an/C0722G1-Repo-BE-main/C0722G1-Repo-BE/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/demo">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2LfqXFRX2HriSzE9Ca3qoBxVacl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/demo" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="07e17733-0d7c-48d1-87c0-be6fa458080c" name="Changes" comment="" />
+      <created>1676272523138</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1676272523138</updated>
+      <workItem from="1676272524769" duration="105000" />
+      <workItem from="1676272697836" duration="98000" />
+      <workItem from="1676309417986" duration="206000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
