@@ -1,0 +1,374 @@
+/**:not(i) {*/
+/*    box-sizing: border-box;*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*}*/
+
+/*html {*/
+/*    background-color: #ecf0f1;*/
+/*}*/
+
+/*body {*/
+/*    min-height: 1000px;*/
+/*}*/
+/*ul {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    background: transparent !important;*/
+/*}*/
+/*li, p{*/
+/*    margin: 0;*/
+/*}*/
+/*ul,*/
+/*li {*/
+/*    list-style-type: none;*/
+/*}*/
+
+/*a {*/
+/*    text-decoration: none;*/
+/*}*/
+/*.header__mobile {*/
+/*    display: none;*/
+/*}*/
+/*.header {*/
+/*    !*background: linear-gradient(to bottom, #fe6432, #d44636);*!*/
+/*    background: linear-gradient(to right, #c21500, #ffc500,#c21500);*/
+/*    padding: 8px 0;*/
+/*}*/
+
+/*.header .nav-item .nav-link,*/
+/*.navbar-brand {*/
+/*    color: #ecf0f1;*/
+/*}*/
+
+/*.header__menu {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: space-between;*/
+/*}*/
+
+/*.header__menu .band {*/
+/*    !* background-color: #c0392b; *!*/
+/*    !*margin-right: 2px;*!*/
+/*    !* box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.35); *!*/
+
+/*}*/
+
+/*.avatar {*/
+/*    display: block;*/
+/*    width: 30px;*/
+/*    height: 30px;*/
+/*}*/
+/*.user__info{*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    position: relative;*/
+/*}*/
+
+/*.user__info:hover .user__info__group{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
+
+/*.user__info__group {*/
+/*    position: absolute;*/
+/*    top: 118%;*/
+/*    right: 0;*/
+/*    width: 100%;*/
+/*    display: none;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    background-color: aliceblue !important;*/
+/*    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);*/
+/*    padding: 0 8px;*/
+/*    border-radius: 4px;*/
+/*    z-index: 10;*/
+/*}*/
+/*.nofication {*/
+/*    font-size: 16px;*/
+/*    color: white;*/
+/*    font-weight: 400;*/
+/*}*/
+/*.user__info__group::after {*/
+/*    content: "";*/
+/*    display: block;*/
+/*    height: 12px;*/
+/*    width: 100%;*/
+/*    z-index: 11;*/
+/*    position: absolute;*/
+/*    top: -8px;*/
+/*    border: none;*/
+/*    background-color: transparent;*/
+/*    left: 0;*/
+/*}*/
+/*.up__info {*/
+/*    position: absolute;*/
+/*    top: -9px;*/
+/*    right: 8px;*/
+/*    color: aliceblue;*/
+/*}*/
+
+/*.user__info__item {*/
+/*    border: none;*/
+/*    background-color: #fa5d2f;*/
+/*    color: white;*/
+/*    padding: 4px 8px;*/
+/*    width: 100%;*/
+/*    text-align: center;*/
+/*    cursor: pointer;*/
+/*    border-radius: 4px;*/
+/*    margin-top: 8px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.user__info__item span {*/
+/*    font-size: 14px;*/
+/*}*/
+/*.b__logout:hover {*/
+/*    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);*/
+/*}*/
+
+/*.logo {*/
+/*    background-color: #c0392b;*/
+
+/*}*/
+
+/*.logo i{*/
+/*    font-size: 32px;*/
+/*}*/
+
+
+/*.menu__item {*/
+/*    padding: 8px 12px;*/
+/*}*/
+
+/*.menu__item.band {*/
+/*    padding: 0;*/
+/*}*/
+
+/*.menu__item:hover {*/
+/*    background: transparent !important;*/
+/*    color: white !important;*/
+/*}*/
+/*.menu__item:first-child:hover {*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.menu__link {*/
+/*    color: #ecf0f1;*/
+/*    text-transform: capitalize;*/
+/*}*/
+/*.menu__item:hover .menu__link {*/
+/*    color: white!important;*/
+/*}*/
+
+/*.login__btn {*/
+/*    padding: 4px;*/
+/*    border: none;*/
+/*    border-radius: 2px;*/
+/*    color: #e74c3c;*/
+/*    box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.35);*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.login__btn i {*/
+/*    font-size: 16px;*/
+/*    margin-right: 4px;*/
+/*}*/
+
+/*.header__info {}*/
+
+/*.header__info__title,*/
+/*.header__info__icon {*/
+/*    font-size: 14px;*/
+/*    font-size: 14px;*/
+/*    color: #ecf0f1;*/
+/*    cursor: pointer;*/
+
+/*}*/
+
+/*.header__info__icon {*/
+/*    margin-right: 4px;*/
+/*}*/
+
+/*.cl-white {*/
+/*    color: #ecf0f1;*/
+/*}*/
+
+/*.sidebar__right {*/
+/*}*/
+
+/*.sidebar__right {*/
+/*    padding: 0;*/
+/*    padding-right: 12px;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    overflow-y: scroll;*/
+/*    height: 400px;*/
+/*}*/
+/*.sidebar__right::-webkit-scrollbar {*/
+/*    display: none;*/
+/*}*/
+/*.logo {*/
+/*    display: inline-block;*/
+/*    border-radius: 8px;*/
+/*    padding: 4px 8px;*/
+/*    box-shadow: 1px 1px 4px rgba(255, 255, 255, 0.35);*/
+
+/*}*/
+/*.nofication {*/
+/*    position: relative;*/
+/*}*/
+/*.user__nofication {*/
+/*    position: relative;*/
+/*}*/
+
+/*.user__nofication:hover .nofication__user, .user__nofication:hover .user__ex{*/
+/*    display: block;*/
+
+/*}*/
+/*.user__ex {*/
+/*    !*display: none;*!*/
+/*    bottom: -10px;*/
+/*    right: 24px;*/
+/*    color: white;*/
+/*}*/
+/*.nofication__user {*/
+/*    max-height: 360px;*/
+/*    overflow-y: scroll;*/
+/*    !*display: none;*!*/
+/*    position: absolute;*/
+/*    background-color: #FFFFFF;*/
+/*    top: 110%;*/
+/*    z-index: 10;*/
+/*    right: 0;*/
+/*    min-width: 250px;*/
+/*    border-radius: 4px;*/
+/*    padding: 8px;*/
+/*    font-size: 14px;*/
+/*}*/
+
+/*.nofication__user::-webkit-scrollbar {*/
+/*    background-color: whitesmoke;*/
+/*    height: 6px;*/
+/*    width: 6px;*/
+/*    border-radius: 0 4px 4px 0;*/
+/*}*/
+/*.nofication__user::-webkit-scrollbar-thumb{*/
+/*    background: rgba(255, 98, 50, 0.9);*/
+/*    border-radius: 10px;*/
+/*}*/
+/*.nofication__link {*/
+/*    font-weight: 500;*/
+/*    cursor: pointer;*/
+
+/*}*/
+/*.nofication__link:hover {*/
+/*    text-decoration: underline;*/
+/*}*/
+
+/*.nofication__item{*/
+/*    padding: 4px;*/
+/*    !*background-color: rgba(250, 93, 47, 0.86);*!*/
+/*    color: #E74C3C;*/
+/*    border-bottom: 1px solid #676665;*/
+/*    !*border-radius: 4px;*!*/
+/*}*/
+/*.noficationed {*/
+/*    color: #4d5154;*/
+/*}*/
+
+/*!* SangDD screen tab*!*/
+/*@media (max-width: 992px) {*/
+/*    .header {*/
+/*        padding: 4px 0;*/
+/*    }*/
+/*    .login__btn {*/
+/*        padding: 4px;*/
+/*    }*/
+/*    .label_guide {*/
+/*        display: none;*/
+/*    }*/
+
+/*    .login__btn i {*/
+/*        display: none;*/
+/*    }*/
+/*    .slide {*/
+/*        display: none;*/
+/*    }*/
+/*    .filter {*/
+/*        margin-top: 4px;*/
+/*        flex-wrap: wrap;*/
+/*    }*/
+
+/*    .category {*/
+/*        display: flex;*/
+/*    }*/
+
+/*    .category__item {*/
+/*        padding: 4px 12px;*/
+/*        border-radius: 3px;*/
+/*        color: #e74c3c;*/
+/*        border: none;*/
+/*        cursor: pointer;*/
+/*    }*/
+
+
+/*    .category__item i {*/
+/*        margin-right: 4px;*/
+/*    }*/
+/*    .category {*/
+/*        width: 100%;*/
+/*        display: flex;*/
+/*        justify-content: space-between;*/
+/*    }*/
+/*    .form__filter {*/
+/*        width: 100%;*/
+/*        display: flex;*/
+/*        justify-content: space-between;*/
+/*        margin-top: 8px;*/
+/*    }*/
+/*    .select__price, .form_search{*/
+/*        width: 48%;*/
+/*    }*/
+/*    .input__search {*/
+/*        width: 100%;*/
+/*        margin-left: 0 !important;*/
+
+/*    }*/
+/*}*/
+/*!* SangDD screen phone*!*/
+/*@media (max-width: 768px) {*/
+/*    .form__filter {*/
+/*        width: 100%;*/
+/*        display: flex;*/
+/*        justify-content: space-between;*/
+/*        margin-top: 8px;*/
+/*    }*/
+/*    .category__item .label{*/
+/*        display: none;*/
+/*    }*/
+/*    .select__price, .form_search{*/
+/*        width: 48%;*/
+/*    }*/
+/*    .category {*/
+/*        width: 100%;*/
+/*        display: flex;*/
+/*        justify-content: space-between;*/
+/*    }*/
+/*    .input__search {*/
+/*        width: 100%;*/
+/*    }*/
+/*    .header{*/
+/*        display: none;*/
+/*    }*/
+/*    .header__mobile {*/
+/*        display: block;*/
+/*    }*/
+
+/*    .footer__content {*/
+/*        display: flex;*/
+/*        flex-direction: column;*/
+/*    }*/
+/*}*/
