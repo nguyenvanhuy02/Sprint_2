@@ -1,2 +1,7 @@
-package PACKAGE_NAME;public class Main {
+public class Main {
+    public static void main(String[] args) {
+        Student student = new Student();
+        student.setName("Huy");
+        System.out.println(student.getName());
+    }
 }
