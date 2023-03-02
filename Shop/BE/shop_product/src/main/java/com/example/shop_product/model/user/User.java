@@ -25,8 +25,8 @@ public class User {
     @JoinColumn(name = "id_user_type",referencedColumnName = "id")
     private UserType userType;
 
-    @ManyToOne
-    @JoinColumn(name = "id_account",referencedColumnName = "id")
+    @OneToOne
+    @JoinColumn(name = "account_id", referencedColumnName = "id")
     private Account account;
 
     @JsonBackReference

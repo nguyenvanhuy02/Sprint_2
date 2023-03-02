@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   api_url: 'http://localhost:8080/clothes',
+  login_url: 'http://localhost:8080/clothes/login'
 };
 
 /*

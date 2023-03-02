@@ -1,0 +1,12 @@
+h1, h2, h3, h4, h5, h6 {
+  background: white;
+}
+
+.box-payment {
+  border: none;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.35);
+  margin-bottom: 24px;
+  padding: 24px;
+}

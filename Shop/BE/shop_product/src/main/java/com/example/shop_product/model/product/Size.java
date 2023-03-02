@@ -16,7 +16,7 @@ public class Size {
 
     @JsonBackReference
     @OneToMany(mappedBy = "size")
-    private Set<ClothesSize> clothesSizes;
+    private Set<Clothes> Clothes;
 
     public Integer getId() {
         return id;
@@ -42,11 +42,4 @@ public class Size {
         this.deleteStatus = deleteStatus;
     }
 
-    public Set<ClothesSize> getClothesSizes() {
-        return clothesSizes;
-    }
-
-    public void setClothesSizes(Set<ClothesSize> clothesSizes) {
-        this.clothesSizes = clothesSizes;
-    }
 }

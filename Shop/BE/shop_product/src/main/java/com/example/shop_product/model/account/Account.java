@@ -19,9 +19,9 @@ public class Account {
     @JsonBackReference
     private Set<AccountRole> accountRoles;
 
-    @OneToMany(mappedBy = "account")
+    @OneToOne(mappedBy = "account")
     @JsonBackReference
-    private Set<User> users;
+    private User user;
 
     public Integer getId() {
         return id;
@@ -63,11 +63,11 @@ public class Account {
         this.accountRoles = accountRoles;
     }
 
-    public Set<User> getUsers() {
-        return users;
+    public User getUser() {
+        return user;
     }
 
-    public void setUsers(Set<User> users) {
-        this.users = users;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

@@ -1,3 +1,5 @@
+import {Images} from './images';
+
 export interface Clothes {
   id?: number;
   name?: string;
@@ -6,4 +8,5 @@ export interface Clothes {
   dateSubmitted?: string;
   quantity?: number;
   deleteStatus?: number;
+  images?: Images[];
 }

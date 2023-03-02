@@ -2,6 +2,7 @@ package com.example.shop_product.model.product;
 
 import com.example.shop_product.model.user.User;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -23,11 +24,11 @@ public class Clothes {
     @JoinColumn(name = "id_discount",referencedColumnName = "id")
     private Discount discount;
 
-    @JsonBackReference
-    @OneToMany(mappedBy = "clothes")
-    private Set<ClothesSize> clothesSizes;
+    @ManyToOne
+    @JoinColumn(name = "id_size",referencedColumnName = "id")
+    private Size size;
 
-    @JsonBackReference
+    @JsonManagedReference
     @OneToMany(mappedBy = "clothes")
     private Set<Image> images;
 
@@ -97,14 +98,6 @@ public class Clothes {
 
     public void setDiscount(Discount discount) {
         this.discount = discount;
-    }
-
-    public Set<ClothesSize> getClothesSizes() {
-        return clothesSizes;
-    }
-
-    public void setClothesSizes(Set<ClothesSize> clothesSizes) {
-        this.clothesSizes = clothesSizes;
     }
 
     public Set<Image> getImages() {
