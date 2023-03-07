@@ -86,151 +86,20 @@
         </p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-12 col-md-4 mb-4">
+    <div class="row" >
+      <div class="col-12 col-md-4 mb-4" *ngFor="let item of listClothes">
         <div class="card h-100">
-          <a href="shop-single.html">
-            <img src="assets/img/sanpham1.jpg" class="card-img-top" alt="...">
+          <a [routerLink]="['/detail/', item.id]">
+            <img src="{{item.images[0]?.url}}" class="card-img-top" alt="...">
           </a>
           <div class="card-body">
             <ul class="list-unstyled d-flex justify-content-between">
-              <li>
-                <i class="text-warning fa fa-star"></i>
-                <i class="text-warning fa fa-star"></i>
-                <i class="text-warning fa fa-star"></i>
-                <i class="text-muted fa fa-star"></i>
-                <i class="text-muted fa fa-star"></i>
-              </li>
-              <li class="text-muted text-right">$480.00</li>
+              <li class="text-muted text-right">{{item.price}} VNĐ</li>
             </ul>
-            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Áo Thun Nam</a>
+            <a [routerLink]="['/detail/', item.id]" class="h2 text-decoration-none text-dark">{{item.name}}</a>
             <p class="card-text">
-              Áo thun trắng là một item thời trang cơ bản, đơn giản nhưng vô cùng phổ biến và thường được yêu thích bởi sự tiện dụng và dễ mix đồ.
+              {{item.description}}
             </p>
-            <p class="text-muted">Reviews (48)</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-4 mb-4">
-        <div class="card h-100">
-          <a href="shop-single.html">
-            <img src="assets/img/sanpham1.jpg" class="card-img-top" alt="...">
-          </a>
-          <div class="card-body">
-            <ul class="list-unstyled d-flex justify-content-between">
-              <li>
-                <i class="text-warning fa fa-star"></i>
-                <i class="text-warning fa fa-star"></i>
-                <i class="text-warning fa fa-star"></i>
-                <i class="text-muted fa fa-star"></i>
-                <i class="text-muted fa fa-star"></i>
-              </li>
-              <li class="text-muted text-right">150.000VNĐ</li>
-            </ul>
-            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Áo Thun Nam</a>
-            <p class="card-text">
-              Áo thun trắng là một item thời trang cơ bản, đơn giản nhưng vô cùng phổ biến và thường được yêu thích bởi sự tiện dụng và dễ mix đồ.
-            </p>
-            <p class="text-muted">Reviews (48)</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-4 mb-4">
-        <div class="card h-100">
-          <a href="shop-single.html">
-            <img src="assets/img/sanpham2.jpg" class="card-img-top" alt="...">
-          </a>
-          <div class="card-body">
-            <ul class="list-unstyled d-flex justify-content-between">
-              <li>
-                <i class="text-warning fa fa-star"></i>
-                <i class="text-warning fa fa-star"></i>
-                <i class="text-warning fa fa-star"></i>
-                <i class="text-warning fa fa-star"></i>
-                <i class="text-warning fa fa-star"></i>
-              </li>
-              <li class="text-muted text-right">150.000VNĐ</li>
-            </ul>
-            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Áo Thun Nam</a>
-            <p class="card-text">
-              Áo thun trắng là một item thời trang cơ bản, đơn giản nhưng vô cùng phổ biến và thường được yêu thích bởi sự tiện dụng và dễ mix đồ.
-            </p>
-            <p class="text-muted">Reviews (74)</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="row">
-      <div class="col-12 col-md-4 mb-4">
-        <div class="card h-100">
-          <a href="shop-single.html">
-            <img src="assets/img/sanpham3.jpg" class="card-img-top" alt="...">
-          </a>
-          <div class="card-body">
-            <ul class="list-unstyled d-flex justify-content-between">
-              <li>
-                <i class="text-warning fa fa-star"></i>
-                <i class="text-warning fa fa-star"></i>
-                <i class="text-warning fa fa-star"></i>
-                <i class="text-muted fa fa-star"></i>
-                <i class="text-muted fa fa-star"></i>
-              </li>
-              <li class="text-muted text-right">150.000VNĐ</li>
-            </ul>
-            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Áo Thun Nam</a>
-            <p class="card-text">
-              Áo thun trắng là một item thời trang cơ bản, đơn giản nhưng vô cùng phổ biến và thường được yêu thích bởi sự tiện dụng và dễ mix đồ.
-            </p>
-            <p class="text-muted">Reviews (24)</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-4 mb-4">
-        <div class="card h-100">
-          <a href="shop-single.html">
-            <img src="assets/img/sanpham4.jpg" class="card-img-top" alt="...">
-          </a>
-          <div class="card-body">
-            <ul class="list-unstyled d-flex justify-content-between">
-              <li>
-                <i class="text-warning fa fa-star"></i>
-                <i class="text-warning fa fa-star"></i>
-                <i class="text-warning fa fa-star"></i>
-                <i class="text-muted fa fa-star"></i>
-                <i class="text-muted fa fa-star"></i>
-              </li>
-              <li class="text-muted text-right">150.000VNĐ</li>
-            </ul>
-            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Áo Thun Nam</a>
-            <p class="card-text">
-              Áo thun trắng là một item thời trang cơ bản, đơn giản nhưng vô cùng phổ biến và thường được yêu thích bởi sự tiện dụng và dễ mix đồ.
-            </p>
-            <p class="text-muted">Reviews (48)</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-4 mb-4">
-        <div class="card h-100">
-          <a href="shop-single.html">
-            <img src="assets/img/sanpham5.jpg" class="card-img-top" alt="...">
-          </a>
-          <div class="card-body">
-            <ul class="list-unstyled d-flex justify-content-between">
-              <li>
-                <i class="text-warning fa fa-star"></i>
-                <i class="text-warning fa fa-star"></i>
-                <i class="text-warning fa fa-star"></i>
-                <i class="text-warning fa fa-star"></i>
-                <i class="text-warning fa fa-star"></i>
-              </li>
-              <li class="text-muted text-right">150.000VNĐ</li>
-            </ul>
-            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Áo Thun Nam</a>
-            <p class="card-text">
-              Áo thun trắng là một item thời trang cơ bản, đơn giản nhưng vô cùng phổ biến và thường được yêu thích bởi sự tiện dụng và dễ mix đồ.
-            </p>
-            <p class="text-muted">Reviews (74)</p>
           </div>
         </div>
       </div>

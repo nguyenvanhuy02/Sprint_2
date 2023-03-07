@@ -1,6 +1,7 @@
 package com.example.shop_product.model.product;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -42,4 +43,12 @@ public class Size {
         this.deleteStatus = deleteStatus;
     }
 
+
+    public Set<com.example.shop_product.model.product.Clothes> getClothes() {
+        return Clothes;
+    }
+
+    public void setClothes(Set<com.example.shop_product.model.product.Clothes> clothes) {
+        Clothes = clothes;
+    }
 }

@@ -8,6 +8,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ClothesService implements IClothesService {
 
@@ -18,5 +20,15 @@ public class ClothesService implements IClothesService {
     @Override
     public Page<Clothes> findAll(Pageable pageable) {
         return clothesRepository.findAll(pageable);
+    }
+
+    @Override
+    public List<Clothes> findAllHome() {
+        return clothesRepository.findAllHome();
+    }
+
+    @Override
+    public Clothes findById(Integer id) {
+        return clothesRepository.findById(id).orElse(null);
     }
 }

@@ -1,6 +1,6 @@
 package com.example.shop_product.model.product;
 
-import com.example.shop_product.model.user.User;
+import com.example.shop_product.model.oder.OrderDetail;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -20,10 +20,12 @@ public class Clothes {
     private Integer quantity;
     private boolean deleteStatus;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "id_discount",referencedColumnName = "id")
     private Discount discount;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "id_size",referencedColumnName = "id")
     private Size size;
@@ -32,8 +34,8 @@ public class Clothes {
     @OneToMany(mappedBy = "clothes")
     private Set<Image> images;
 
-    @JsonBackReference
     @OneToMany(mappedBy = "clothes")
+    @JsonBackReference
     private Set<OrderDetail> orderDetails;
 
     public Integer getId() {
@@ -98,6 +100,14 @@ public class Clothes {
 
     public void setDiscount(Discount discount) {
         this.discount = discount;
+    }
+
+    public Size getSize() {
+        return size;
+    }
+
+    public void setSize(Size size) {
+        this.size = size;
     }
 
     public Set<Image> getImages() {

@@ -21,30 +21,32 @@
         </tr>
         </thead>
         <tbody class="align-middle">
-        <tr>
-          <td class="align-middle"><img src="assets/img/sanpham1.jpg" alt="" style="width: 50px;"> Product Name</td>
-          <td class="align-middle">150.000VNĐ</td>
+        <tr *ngFor="let item of cart">
+          <td class="align-middle"><img src="{{item.clothes.images[0].url}}" alt="" style="width: 50px;"> {{item.clothes.name}}</td>
+          <td class="align-middle">{{item.clothes.price}}<sup>đ</sup></td>
           <td class="align-middle">
-            1
+            <div class="input-group quantity mx-auto" style="width: 105px;">
+<!--              <div class="input-group-btn">-->
+<!--                <button class="btn btn-success btn-minus" (click)="minus(item.id)">-->
+<!--                  <i class="fa fa-minus"></i>-->
+<!--                </button>-->
+<!--              </div>-->
+<!--              <div id="quantity{{item.id}}" class="form-control form-control-sm bg-secondary border-0 text-center">{{item.quantity}}</div>-->
+<!--              <div class="input-group-btn">-->
+<!--                <button class="btn btn-success btn-plus" (click)="plus(item.id)">-->
+<!--                  <i class="fa fa-plus"></i>-->
+<!--                </button>-->
+<!--              </div>-->
+              <li class="list-inline-item"><span class="btn btn-success" id="btn-minus" (click)="minus(item.id)">-</span></li>
+              <li  class="list-inline-item"><span class="badge bg-secondary" id="quantity{{item.id}}">{{item.quantity}}</span></li>
+              <li class="list-inline-item"><span class="btn btn-success" id="btn-plus" (click)="plus(item.id)">+</span></li>
+            </div>
           </td>
-          <td class="align-middle">150.000VNĐ</td>
+          <td class="align-middle" id="totalMoney{{item.id}}">{{item.clothes.price * item.quantity|number}}<sup>đ</sup></td>
           <td class="align-middle">
             <button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button>
           </td>
         </tr>
-        <tr>
-          <td class="align-middle"><img src="assets/img/sanpham1.jpg" alt="" style="width: 50px;"> Product Name</td>
-          <td class="align-middle">150.000VNĐ</td>
-          <td class="align-middle">
-            2
-          </td>
-          <td class="align-middle">300.000VNĐ</td>
-          <td class="align-middle">
-            <button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button>
-          </td>
-        </tr>
-
-
         </tbody>
       </table>
     </div>
@@ -55,17 +57,21 @@
         <div class="border-bottom pb-2">
           <div class="d-flex justify-content-between mb-3">
             <h6>Tổng Sản Phẩm</h6>
-            <h6 class="font-weight-medium">2</h6>
+            <h6 class="font-weight-medium">{{totalQuantity|number}}</h6>
           </div>
           <div class="d-flex justify-content-between">
             <h6 class="font-weight-medium">Tổng Tiền Hàng</h6>
-            <h6 class="font-weight-medium">450.000VNĐ</h6>
+            <h6 class="font-weight-medium">{{totalPrice|number}}<sup>đ</sup></h6>
+          </div>
+          <div class="d-flex justify-content-between mb-3">
+            <h6>Phí Giao Hàng</h6>
+            <h6 class="font-weight-medium">15,000<sup>đ</sup></h6>
           </div>
         </div>
         <div class="pt-2">
           <div class="d-flex justify-content-between mt-2">
-            <h5>Tạm Tính</h5>
-            <h5>450.000VNĐ</h5>
+            <h5>Tổng Thanh Toán</h5>
+            <h5 *ngIf="cart.length != 0">{{totalPrice + 15000|number}}<sup>đ</sup></h5>
           </div>
           <button class="btn btn-block btn btn-success w-100 mt-3 " name="submit" value="buy">Thanh Toán</button>
         </div>

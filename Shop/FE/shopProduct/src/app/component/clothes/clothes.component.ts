@@ -9,7 +9,8 @@ import {ClothesService} from '../../service/product/clothes.service';
   styleUrls: ['./clothes.component.css']
 })
 export class ClothesComponent implements OnInit {
-  listClothes: PageClothes | undefined;
+  // @ts-ignore
+  listClothes: PageClothes;
 
   constructor(private clothesService: ClothesService,
               private router: Router) {
@@ -40,5 +41,7 @@ export class ClothesComponent implements OnInit {
   gotoPage(pageNumber: number) {
     this.findAll(pageNumber);
   }
+
+
 
 }

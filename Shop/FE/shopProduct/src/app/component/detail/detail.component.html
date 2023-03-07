@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-lg-5 mt-5">
         <div class="card mb-3">
-          <img class="card-img img-fluid" src="assets/img/chi_tiet_2.jpg" alt="Card image cap" id="product-detail">
+          <img class="card-img img-fluid" src="{{clothesDetail.images[0]?.url}}" alt="Card image cap" id="product-detail">
         </div>
         <div class="row">
           <!--Start Controls-->
@@ -25,17 +25,17 @@
                 <div class="row">
                   <div class="col-4">
                     <a href="#">
-                      <img class="card-img img-fluid" src="assets/img/chi_tiet_1.jpg" alt="Product Image 1">
+                      <img class="card-img img-fluid" src="{{clothesDetail.images[1]?.url}}" onError="replaceImg()">
                     </a>
                   </div>
                   <div class="col-4">
                     <a href="#">
-                      <img class="card-img img-fluid" src="assets/img/chi_tiet_7.jpg" alt="Product Image 2">
+                      <img class="card-img img-fluid" src="{{clothesDetail.images[2]?.url}}" onError="replaceImg()">
                     </a>
                   </div>
                   <div class="col-4">
                     <a href="#">
-                      <img class="card-img img-fluid" src="assets/img/chi_tiet_4.jpg" alt="Product Image 3">
+                      <img class="card-img img-fluid" src="{{clothesDetail.images[3]?.url}}" onError="replaceImg()">
                     </a>
                   </div>
                 </div>
@@ -47,17 +47,7 @@
                 <div class="row">
                   <div class="col-4">
                     <a href="#">
-                      <img class="card-img img-fluid" src="assets/img/chi_tiet_5.jpg" alt="Product Image 4">
-                    </a>
-                  </div>
-                  <div class="col-4">
-                    <a href="#">
-                      <img class="card-img img-fluid" src="assets/img/chi_tiet_6.jpg" alt="Product Image 5">
-                    </a>
-                  </div>
-                  <div class="col-4">
-                    <a href="#">
-                      <img class="card-img img-fluid" src="assets/img/chi_tiet_7.jpg" alt="Product Image 6">
+                      <img class="card-img img-fluid" src="{{clothesDetail.images[4]?.url}}" onError="replaceImg()">
                     </a>
                   </div>
                 </div>
@@ -82,19 +72,10 @@
       <div class="col-lg-7 mt-5">
         <div class="card">
           <div class="card-body">
-            <h1 class="h2">Áo sơ mi nam nữ dài tay cao cấp</h1>
-            <p class="h3 py-2">150.000VNĐ</p>
-            <p class="py-2">
-              <i class="fa fa-star text-warning"></i>
-              <i class="fa fa-star text-warning"></i>
-              <i class="fa fa-star text-warning"></i>
-              <i class="fa fa-star text-warning"></i>
-              <i class="fa fa-star text-secondary"></i>
-              <span class="list-inline-item text-dark">Rating 4.8 | 36 Comments</span>
-            </p>
-
+            <h1 class="h2">{{clothesDetail.name}}</h1>
+            <p class="h3 py-2">{{clothesDetail.price}}VNĐ</p>
             <h6>MÔ TẢ SẢN PHẨM:</h6>
-            <p>Áo Sơ Mi Nam dài tay dáng ôm body , chống nhăn cao cấp  chính là gợi ý tuyệt vời cho nam giới mỗi khi lựa chọn trang phục mỗi ngày. Với những mẫu áo sơ mi nam thiết kế đơn giản và toát lên vẻ lịch lãm tinh tế, mang đến phong cách thời trang trẻ trung, năng động chắc chắn sẽ là lựa chọn hoàn hảo cho chàng trai hiện đại, nam tính. Những chiếc áo sơ mi dài tay dáng ôm body Hàn Quốc , chống nhăn cao cấp  dù kết hợp với quần âu, quần jeans khi đi làm hay diện cùng quần ngố, quần short đi chơi đều NỔI BẬT, THOẢI MÁI và PHONG CÁCH. </p>
+            <p>{{clothesDetail.description}} </p>
             <ul class="list-inline">
               <li class="list-inline-item">
                 <h6>Màu sắc :</h6>
@@ -130,7 +111,7 @@
                   <ul class="list-inline pb-3">
                     <li class="list-inline-item text-right">
                       Số lượng
-                      <input type="hidden" name="product-quanity" id="product-quanity" value="1">
+                      <input #quantity type="hidden" name="product-quanity" id="product-quanity" value="1">
                     </li>
                     <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
                     <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
@@ -143,7 +124,7 @@
                   <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">Mua Ngay</button>
                 </div>
                 <div class="col d-grid">
-                  <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Thêm Vào Giỏ Hàng</button>
+                  <button (click)="add(clothesDetail.id,quantity.value)" type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Thêm Vào Giỏ Hàng</button>
                 </div>
               </div>
             </form>
@@ -476,4 +457,8 @@
 
   </div>
 </section>
-
+<script>
+  function replaceImg() {
+    document.getElementById("myImg").src = "https://znews-photo.zingcdn.me/w660/Uploaded/qhj_yvobvhfwbv/2018_07_18/Nguyen_Huy_Binh1.jpg";
+  }
+</script>

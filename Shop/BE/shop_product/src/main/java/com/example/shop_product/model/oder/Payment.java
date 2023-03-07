@@ -1,11 +1,8 @@
-package com.example.shop_product.model.payment;
+package com.example.shop_product.model.oder;
 
-import com.example.shop_product.model.product.OrderDetail;
-import com.example.shop_product.model.user.User;
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 public class Payment {
@@ -20,9 +17,9 @@ public class Payment {
 
     private Boolean deleteStatus;
 
-    @JsonBackReference
-    @OneToMany(mappedBy = "payment")
-    private Set<OrderDetail> orderDetails;
+    @JsonManagedReference
+    @OneToOne(mappedBy = "payment")
+    private OrderClothes oderClothes;
 
     public Integer getId() {
         return id;
@@ -56,11 +53,11 @@ public class Payment {
         this.deleteStatus = deleteStatus;
     }
 
-    public Set<OrderDetail> getOrderDetails() {
-        return orderDetails;
+    public OrderClothes getOderClothes() {
+        return oderClothes;
     }
 
-    public void setOrderDetails(Set<OrderDetail> orderDetails) {
-        this.orderDetails = orderDetails;
+    public void setOderClothes(OrderClothes oderClothes) {
+        this.oderClothes = oderClothes;
     }
 }

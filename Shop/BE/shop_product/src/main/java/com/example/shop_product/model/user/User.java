@@ -1,8 +1,9 @@
 package com.example.shop_product.model.user;
 
 import com.example.shop_product.model.account.Account;
-import com.example.shop_product.model.product.OrderDetail;
+import com.example.shop_product.model.oder.OrderClothes;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -25,13 +26,14 @@ public class User {
     @JoinColumn(name = "id_user_type",referencedColumnName = "id")
     private UserType userType;
 
+    @JsonBackReference
     @OneToOne
     @JoinColumn(name = "account_id", referencedColumnName = "id")
     private Account account;
 
     @JsonBackReference
     @OneToMany(mappedBy = "user")
-    private Set<OrderDetail> orderDetails;
+    private Set<OrderClothes> oderClothes;
 
     public Integer getId() {
         return id;
@@ -113,11 +115,11 @@ public class User {
         this.account = account;
     }
 
-    public Set<OrderDetail> getOrderDetails() {
-        return orderDetails;
+    public Set<OrderClothes> getOderClothes() {
+        return oderClothes;
     }
 
-    public void setOrderDetails(Set<OrderDetail> orderDetails) {
-        this.orderDetails = orderDetails;
+    public void setOderClothes(Set<OrderClothes> oderClothes) {
+        this.oderClothes = oderClothes;
     }
 }

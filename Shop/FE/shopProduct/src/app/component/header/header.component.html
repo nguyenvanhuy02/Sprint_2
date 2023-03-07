@@ -26,7 +26,6 @@
           </li>
         </ul>
       </div>
-
       <div class="navbar align-self-center d-flex">
         <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
           <div class="input-group">
@@ -49,6 +48,9 @@
             <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
           </a>
           <ul class="profile">
+            <li class="profile-item">
+              <button *ngIf="checkLogin">{{nameAccount}}</button>
+            </li>
             <li class="profile-item">
               <button>Lịch sử mua hàng</button>
             </li>
