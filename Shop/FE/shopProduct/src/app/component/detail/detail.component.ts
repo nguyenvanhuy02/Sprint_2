@@ -24,6 +24,10 @@ export class DetailComponent implements OnInit {
   user: User;
   // @ts-ignore
   orderForm: FormGroup;
+  // @ts-ignore
+  orderDetail: OrderDetail[];
+  urlShow: string | undefined;
+  quality = 1;
 
   constructor(private clothesService: ClothesService,
               private tokenService: TokenService,
@@ -51,6 +55,8 @@ export class DetailComponent implements OnInit {
       data => {
         console.log(data);
         this.clothesDetail = data;
+        // @ts-ignore
+        this.urlShow = this.clothesDetail.images[0].url;
       }
     );
   }
@@ -76,4 +82,19 @@ export class DetailComponent implements OnInit {
     });
   }
 
+  // tslint:disable-next-line:typedef
+  changeImg(url: string) {
+    this.urlShow = url;
+  }
+
+  // tslint:disable-next-line:typedef
+  minus(quality: number) {
+    if (this.quality > 1) {
+      this.quality -= 1;
+    }
+  }
+  // tslint:disable-next-line:typedef
+  plus(quality: number) {
+    this.quality += 1;
+  }
 }

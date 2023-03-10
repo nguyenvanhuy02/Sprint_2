@@ -16,6 +16,10 @@ export class ClothesService {
   findAll(pageNumber: number): Observable<PageClothes> {
     return this.httpClient.get<PageClothes>(environment.api_url + '?page=' + pageNumber);
   }
+  findAllSearch(search: any, pageNumber: number): Observable<PageClothes> {
+    console.log(search);
+    return this.httpClient.post<PageClothes>(environment.api_url + '/search' + '?page=' + pageNumber, search);
+  }
 
   findAllHome(): Observable<any> {
     return this.httpClient.get<any>(environment.api_url_home);

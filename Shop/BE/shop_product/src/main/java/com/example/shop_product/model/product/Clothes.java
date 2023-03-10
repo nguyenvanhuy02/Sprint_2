@@ -19,6 +19,7 @@ public class Clothes {
     private String dateSubmitted;
     private Integer quantity;
     private boolean deleteStatus;
+    private String gender;
 
     @JsonBackReference
     @ManyToOne
@@ -124,5 +125,13 @@ public class Clothes {
 
     public void setOrderDetails(Set<OrderDetail> orderDetails) {
         this.orderDetails = orderDetails;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }

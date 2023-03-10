@@ -52,4 +52,14 @@ public class OrderService implements IOrderService {
     public OrderDetail getOrderDetail(Integer id) {
         return orderDetailRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public List<OrderDetail> getHistory(String id) {
+        return orderDetailRepository.getHistory(id);
+    }
+
+    @Override
+    public Page<OrderDetail> getPageHistory(String id, Pageable pageable) {
+        return orderDetailRepository.getPageHistory(id,pageable);
+    }
 }

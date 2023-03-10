@@ -80,21 +80,21 @@
   <div class="container py-5">
     <div class="row text-center py-3">
       <div class="col-lg-6 m-auto">
-        <h1 class="h1">Những Sản phẩm Nổi Bật</h1>
+        <h1 class="h1">Những Sản phẩm Mới</h1>
         <p>
           Sản phẩm áo quần đẹp của chúng tôi luôn đảm bảo chất lượng chính hãng, mang đến sự hài lòng và tin tưởng cho khách hàng.
         </p>
       </div>
     </div>
-    <div class="row" >
+    <div class="row">
       <div class="col-12 col-md-4 mb-4" *ngFor="let item of listClothes">
-        <div class="card h-100">
-          <a [routerLink]="['/detail/', item.id]">
+        <div class="card h-100" *ngIf="item">
+          <a *ngIf="item.images" [routerLink]="['/detail/', item.id]">
             <img src="{{item.images[0]?.url}}" class="card-img-top" alt="...">
           </a>
           <div class="card-body">
             <ul class="list-unstyled d-flex justify-content-between">
-              <li class="text-muted text-right">{{item.price}} VNĐ</li>
+              <li class="text-muted text-right">{{item.price | number}} <sup>đ</sup></li>
             </ul>
             <a [routerLink]="['/detail/', item.id]" class="h2 text-decoration-none text-dark">{{item.name}}</a>
             <p class="card-text">
@@ -109,3 +109,5 @@
 
 </section>
 <!-- End Featured Product -->
+
+

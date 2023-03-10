@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {PageClothes} from '../../model/product/pageClothes';
 import {Router} from '@angular/router';
 import {ClothesService} from '../../service/product/clothes.service';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-clothes',
@@ -11,37 +12,52 @@ import {ClothesService} from '../../service/product/clothes.service';
 export class ClothesComponent implements OnInit {
   // @ts-ignore
   listClothes: PageClothes;
+  // @ts-ignore
+  rfSearch: FormGroup;
 
   constructor(private clothesService: ClothesService,
+              private formBuilder: FormBuilder,
               private router: Router) {
   }
 
   ngOnInit(): void {
-    // this.findAll(0);
-    this.clothesService.findAll(0).subscribe(
+    this.createSearchForm();
+    this.findAll(0);
+  }
+
+  // tslint:disable-next-line:typedef
+  findAll(pageNumber: number) {
+    console.log(this.rfSearch.value);
+    this.clothesService.findAllSearch(this.rfSearch.value, pageNumber).subscribe(
       data => {
-        console.log(data);
         this.listClothes = data;
+        console.log('search nè ' + this.rfSearch.value);
       }
     );
   }
 
   // tslint:disable-next-line:typedef
-  findAll(pageNumber: number) {
-    this.clothesService.findAll(pageNumber).subscribe(
-      data => {
-        console.log(data);
-        this.listClothes = data;
-      }
-    );
+  createSearchForm() {
+    this.rfSearch = this.formBuilder.group({
+      name: [''],
+      gender: [''],
+    });
   }
 
+// // tslint:disable-next-line:typedef
+//   setSearch(gender: string) {
+//     this.rfSearch.setValue({
+//       name: [this.rfSearch.value.name],
+//       gender: [gender],
+//     });
+//     console.log('maksdoasd' + this.rfSearch.value.name);
+//     console.log(this.rfSearch.value);
+//   }
 
   // tslint:disable-next-line:typedef
   gotoPage(pageNumber: number) {
     this.findAll(pageNumber);
   }
-
 
 
 }

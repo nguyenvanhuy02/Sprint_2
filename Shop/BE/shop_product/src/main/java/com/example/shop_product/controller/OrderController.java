@@ -10,6 +10,9 @@ import com.example.shop_product.service.IOrderService;
 import com.example.shop_product.service.IPaymentService;
 import com.example.shop_product.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -55,22 +58,22 @@ public class OrderController {
             paymentService.addPayment(payment);
 
 
-            OrderClothes orderPhoneNew = new OrderClothes();
-            orderPhoneNew.setPayment(payment);
-            orderPhoneNew.setUser(userService.getUserById(order.getUser()));
-            orderPhoneNew.setDeleteStatus(true);
-            orderService.addOrder(orderPhoneNew);
+            OrderClothes orderClothesNew = new OrderClothes();
+            orderClothesNew.setPayment(payment);
+            orderClothesNew.setUser(userService.getUserById(order.getUser()));
+            orderClothesNew.setDeleteStatus(true);
+            orderService.addOrder(orderClothesNew);
 
-            OrderClothes orderPhone1 = orderService.getOrder(order.getUser());
+            OrderClothes orderClothes1 = orderService.getOrder(order.getUser());
 
             OrderDetail orderDetail = new OrderDetail();
-            orderDetail.setOrderClothes(orderPhone1);
+            orderDetail.setOrderClothes(orderClothes1);
             orderDetail.setClothes(clothesService.findById(order.getClothes()));
             orderDetail.setQuantity(order.getQuantity());
             orderService.addOrderDetail(orderDetail);
 
 
-            return new ResponseEntity<>(orderPhone1, HttpStatus.OK);
+            return new ResponseEntity<>(orderClothes1, HttpStatus.OK);
         }
 
         OrderDetail orderDetail = new OrderDetail();
@@ -105,5 +108,36 @@ public class OrderController {
         orderDetail.setQuantity(orderDetail.getQuantity() + 1);
         orderService.addOrderDetail(orderDetail);
         return new ResponseEntity<>(orderDetail, HttpStatus.OK);
+    }
+
+    @GetMapping("payment/{id}")
+    public ResponseEntity<Payment> payment(@PathVariable Integer id, @RequestParam String note) {
+        Payment payment = paymentService.getPaymentByUserId(id);
+        payment.setPaymentStatus(true);
+        if(note.length() == 0) {
+            payment.setShippingDescription("Khong co ghi chu");
+        } else {
+            payment.setShippingDescription(note);
+        }
+        paymentService.addPayment(payment);
+        return new ResponseEntity<>(payment, HttpStatus.OK);
+    }
+
+    @GetMapping("history/{id}")
+    public ResponseEntity<List<OrderDetail>> getHistory(@PathVariable String id) {
+        List<OrderDetail> orderDetails = orderService.getHistory(id);
+        if (orderDetails.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+        }
+        return new ResponseEntity<>(orderDetails, HttpStatus.OK);
+    }
+
+    @GetMapping("historypage/{id}")
+    public ResponseEntity<Page<OrderDetail>> getPageHistory(@PathVariable String id , Pageable pageable) {
+        Page<OrderDetail> orderDetails = orderService.getPageHistory(id,pageable);
+        if (orderDetails.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+        }
+        return new ResponseEntity<>(orderDetails, HttpStatus.OK);
     }
 }

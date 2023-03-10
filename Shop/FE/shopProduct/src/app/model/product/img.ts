@@ -1,4 +1,4 @@
-export interface Images {
+export interface Img {
   id?: number;
   url?: string;
   deleteStatus?: boolean;

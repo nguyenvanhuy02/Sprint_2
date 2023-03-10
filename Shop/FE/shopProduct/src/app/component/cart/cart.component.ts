@@ -49,12 +49,12 @@ export class CartComponent implements OnInit {
         // tslint:disable-next-line:radix
         this.totalQuantity = this.totalQuantity + this.cart[i].quantity;
       }
+      this.orderService.quantityCount$.next(this.totalQuantity);
     }, error => {
       this.toast.error('Không có sản phẩm nào trong giỏ hàng');
       this.clear();
     });
   }
-
   // tslint:disable-next-line:typedef
   total() {
     if (this.cart) {
@@ -72,7 +72,7 @@ export class CartComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
-  minus(id: number) {
+  minus(id: number | any) {
     // tslint:disable-next-line:prefer-const
     // @ts-ignore
     var quantity = +document.getElementById('quantity' + id).innerHTML;
@@ -86,12 +86,13 @@ export class CartComponent implements OnInit {
         });
         this.total();
         // @ts-ignore
+        this.money = +(this.totalPrice / 23000).toFixed(2);
       });
     }
   }
 
   // tslint:disable-next-line:typedef
-  plus(id: number) {
+  plus(id: number | any) {
     this.orderService.plus(id).subscribe(data => {
       this.totalPrice = 0;
       this.cart.forEach(value => {
@@ -100,6 +101,8 @@ export class CartComponent implements OnInit {
         }
       });
       this.total();
+      // @ts-ignore
+      this.money = +(this.totalPrice / 23000).toFixed(2);
     });
   }
 

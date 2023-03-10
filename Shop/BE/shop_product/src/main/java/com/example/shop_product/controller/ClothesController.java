@@ -1,5 +1,7 @@
 package com.example.shop_product.controller;
 
+import com.example.shop_product.dto.ClothesDto;
+import com.example.shop_product.dto.IClothesDto;
 import com.example.shop_product.model.product.Clothes;
 import com.example.shop_product.service.IClothesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,5 +51,17 @@ public class ClothesController {
             e.getStackTrace();
         }
         return new ResponseEntity<>(clothes, HttpStatus.OK);
+    }
+
+    @PostMapping("/search")
+    public ResponseEntity<Page<IClothesDto>> getList(
+            @RequestBody ClothesDto clothesDto,
+            @PageableDefault(value = 6) Pageable pageable
+            ){
+        Page<IClothesDto> clothesDtos = clothesService.findAllClothes(clothesDto,pageable);
+        if (clothesDtos.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(clothesDtos, HttpStatus.OK);
     }
 }

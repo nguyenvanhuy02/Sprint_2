@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light shadow">
   <div class="container d-flex justify-content-between align-items-center">
 
-    <a class="navbar-brand text-success logo h1 align-self-center" [routerLink]="['home']" >
+    <a class="navbar-brand text-success logo h1 align-self-center" [routerLink]="['']" >
       Shop
     </a>
 
@@ -13,17 +13,17 @@
       <div class="flex-fill">
         <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['home']">Trang chủ</a>
+            <a class="nav-link" [routerLink]="['']">Trang chủ</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['clothes']">Sản phẩm</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="shop.html">Shop</a>
+            <a class="nav-link" *ngIf="checkLogin" [routerLink]="['cart']">Giỏ Hàng</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Liên hệ</a>
-          </li>
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="contact.html">Liên hệ</a>-->
+<!--          </li>-->
         </ul>
       </div>
       <div class="navbar align-self-center d-flex">
@@ -40,7 +40,7 @@
         </a>
         <a  *ngIf="checkLogin" class="nav-icon position-relative text-decoration-none" routerLink="/cart">
           <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-          <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+          <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{{quantity}}</span>
         </a>
         <div class="profile-box" *ngIf="checkLogin">
           <a class="nav-icon position-relative text-decoration-none" href="#">
@@ -52,10 +52,10 @@
               <button *ngIf="checkLogin">{{nameAccount}}</button>
             </li>
             <li class="profile-item">
-              <button>Lịch sử mua hàng</button>
+              <button>Thông tin cá nhân</button>
             </li>
             <li class="profile-item">
-              <button>Thông tin cá nhân</button>
+              <button [routerLink]="['history',currentUser.id]">Lịch sử mua hàng</button>
             </li>
             <li class="profile-item">
               <button (click)="logOut()" class="login__btn">

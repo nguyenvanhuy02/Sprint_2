@@ -14,6 +14,8 @@ import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CartComponent } from './component/cart/cart.component';
 import { DetailComponent } from './component/detail/detail.component';
+import { PaymentComponent } from './component/payment/payment.component';
+import { HistoryComponent } from './component/history/history.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { DetailComponent } from './component/detail/detail.component';
     LoginComponent,
     CartComponent,
     DetailComponent,
+    PaymentComponent,
+    HistoryComponent,
   ],
   imports: [
     BrowserModule,

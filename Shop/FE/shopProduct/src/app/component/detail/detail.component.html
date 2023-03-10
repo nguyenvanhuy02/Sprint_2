@@ -1,19 +1,19 @@
 <!-- Open Content -->
-<section class="bg-light">
+<section class="bg-light" *ngIf="clothesDetail.images">
   <div class="container pb-5">
     <div class="row">
       <div class="col-lg-5 mt-5">
-        <div class="card mb-3">
-          <img class="card-img img-fluid" src="{{clothesDetail.images[0]?.url}}" alt="Card image cap" id="product-detail">
+        <div class="card mb-3" >
+          <img height="450px" class="card-img d-block w-100" src="{{urlShow}}" alt="Card image cap" id="product-detail">
         </div>
         <div class="row">
           <!--Start Controls-->
-          <div class="col-1 align-self-center">
-            <a href="#multi-item-example" role="button" data-bs-slide="prev">
-              <i class="text-dark fas fa-chevron-left"></i>
-              <span class="sr-only">Previous</span>
-            </a>
-          </div>
+<!--          <div class="col-1 align-self-center">-->
+<!--            <a href="#multi-item-example" role="button" data-bs-slide="prev">-->
+<!--              <i class="text-dark fas fa-chevron-left"></i>-->
+<!--              <span class="sr-only">Previous</span>-->
+<!--            </a>-->
+<!--          </div>-->
           <!--End Controls-->
           <!--Start Carousel Wrapper-->
           <div id="multi-item-example" class="col-10 carousel slide carousel-multi-item" data-bs-ride="carousel">
@@ -23,48 +23,25 @@
               <!--First slide-->
               <div class="carousel-item active">
                 <div class="row">
-                  <div class="col-4">
-                    <a href="#">
-                      <img class="card-img img-fluid" src="{{clothesDetail.images[1]?.url}}" onError="replaceImg()">
-                    </a>
-                  </div>
-                  <div class="col-4">
-                    <a href="#">
-                      <img class="card-img img-fluid" src="{{clothesDetail.images[2]?.url}}" onError="replaceImg()">
-                    </a>
-                  </div>
-                  <div class="col-4">
-                    <a href="#">
-                      <img class="card-img img-fluid" src="{{clothesDetail.images[3]?.url}}" onError="replaceImg()">
-                    </a>
+                  <div class="col-4" *ngFor="let item of clothesDetail.images">
+                      <img class="card-img img-fluid" src="{{item?.url}}" (click)="changeImg(item.url)">
                   </div>
                 </div>
               </div>
               <!--/.First slide-->
 
-              <!--Second slide-->
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-4">
-                    <a href="#">
-                      <img class="card-img img-fluid" src="{{clothesDetail.images[4]?.url}}" onError="replaceImg()">
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!--/.Second slide-->
 
             </div>
             <!--End Slides-->
           </div>
           <!--End Carousel Wrapper-->
           <!--Start Controls-->
-          <div class="col-1 align-self-center">
-            <a href="#multi-item-example" role="button" data-bs-slide="next">
-              <i class="text-dark fas fa-chevron-right"></i>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
+<!--          <div class="col-1 align-self-center">-->
+<!--            <a href="#multi-item-example" role="button" data-bs-slide="next">-->
+<!--              <i class="text-dark fas fa-chevron-right"></i>-->
+<!--              <span class="sr-only">Next</span>-->
+<!--            </a>-->
+<!--          </div>-->
           <!--End Controls-->
         </div>
       </div>
@@ -73,7 +50,7 @@
         <div class="card">
           <div class="card-body">
             <h1 class="h2">{{clothesDetail.name}}</h1>
-            <p class="h3 py-2">{{clothesDetail.price}}VNĐ</p>
+            <p class="h3 py-2">{{clothesDetail.price | number}}<sup>đ</sup></p>
             <h6>MÔ TẢ SẢN PHẨM:</h6>
             <p>{{clothesDetail.description}} </p>
             <ul class="list-inline">
@@ -113,9 +90,15 @@
                       Số lượng
                       <input #quantity type="hidden" name="product-quanity" id="product-quanity" value="1">
                     </li>
-                    <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
-                    <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
-                    <li class="list-inline-item"><span class="btn btn-success" id="btn-plus">+</span></li>
+                    <li class="list-inline-item">
+                      <span class="btn btn-success" id="btn-minus" (click)="minus(quality)">-</span>
+                    </li>
+                    <li class="list-inline-item">
+                      <span class="badge bg-secondary" id="var-value">{{quality}}</span>
+                    </li>
+                    <li class="list-inline-item">
+                      <span class="btn btn-success" id="btn-plus" (click)="plus(quality)">+</span>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -124,7 +107,7 @@
                   <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">Mua Ngay</button>
                 </div>
                 <div class="col d-grid">
-                  <button (click)="add(clothesDetail.id,quantity.value)" type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Thêm Vào Giỏ Hàng</button>
+                  <button (click)="add(clothesDetail.id,quality)" type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Thêm Vào Giỏ Hàng</button>
                 </div>
               </div>
             </form>
@@ -457,8 +440,4 @@
 
   </div>
 </section>
-<script>
-  function replaceImg() {
-    document.getElementById("myImg").src = "https://znews-photo.zingcdn.me/w660/Uploaded/qhj_yvobvhfwbv/2018_07_18/Nguyen_Huy_Binh1.jpg";
-  }
-</script>
+

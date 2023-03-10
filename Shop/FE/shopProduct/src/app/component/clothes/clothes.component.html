@@ -1,9 +1,9 @@
 <!-- Start Content -->
-<div class="container py-5">
+<div class="container py-5" >
   <div class="row">
 
     <div class="col-lg-3">
-      <h1 class="h2 pb-4">Tìm Kiếm</h1>
+      <h1 class="h2 pb-4">BỘ LỌC TÌM KIẾM</h1>
       <ul class="list-unstyled templatemo-accordion">
         <li class="pb-3">
           <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
@@ -29,47 +29,72 @@
     </div>
 
     <div class="col-lg-9">
-      <div class="row">
-        <div class="col-md-6">
-          <ul class="list-inline shop-top-menu pb-3 pt-1">
-            <li class="list-inline-item">
-              <a class="h3 text-dark text-decoration-none mr-3" href="#">Tất Cả</a>
-            </li>
-            <li class="list-inline-item">
-              <a class="h3 text-dark text-decoration-none mr-3" href="#">Nam</a>
-            </li>
-            <li class="list-inline-item">
-              <a class="h3 text-dark text-decoration-none" href="#">Nữ</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-6 pb-4">
-          <div class="d-flex">
-            <select class="form-control">
-              <option>Featured</option>
-              <option>A to Z</option>
-              <option>Item</option>
-            </select>
+      <form *ngIf="rfSearch" [formGroup]="rfSearch" (ngSubmit)="findAll(0)">
+        <div class="row">
+          <div class="col-md-6">
+<!--            <ul class="list-inline shop-top-menu pb-3 pt-1" formControlName="gender" >-->
+<!--              <li class="list-inline-item"  value="">-->
+<!--                <a  class="h3 text-dark text-decoration-none mr-3"  >Tất Cả | </a>-->
+<!--              </li>-->
+<!--              <li class="list-inline-item" value="Nam">-->
+<!--                <a class="h3 text-dark text-decoration-none mr-3" >Nam | </a>-->
+<!--              </li>-->
+<!--              <li class="list-inline-item" value="Nữ">-->
+<!--                <a  class="h3 text-dark text-decoration-none" >Nữ</a>-->
+<!--              </li>-->
+<!--            </ul>-->
+            <div class="form-floating mb-4 form-inp">
+              <select class="form-select form-select-underlined form-select-underlined" id="floatingPaymentStatus"
+                      formControlName="gender">
+                <option value="">- Tất cả -</option>
+                <option value="Nam">Nam</option>
+                <option value="Nữ">Nữ</option>
+
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6 pb-4">
+            <div class="d-flex">
+              <input type="text" class="form-control" formControlName="name" placeholder="Tìm Kiếm...">
+            </div>
           </div>
         </div>
-      </div>
+      </form>
+
       <div class="row">
+<!--        <div class="col-md-4" *ngFor="let item of listClothes?.content">-->
+<!--          <div class="card mb-4 product-wap rounded-0" *ngIf="item.images">-->
+<!--            <div class="card rounded-0">-->
+<!--              <img src="{{item.images[0]?.url}}" class="card-img-top d-block" height="270px" alt="...">-->
+<!--              <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">-->
+<!--                <ul class="list-unstyled">-->
+<!--                  <li><a class="btn btn-success text-white mt-2" [routerLink]="['/detail/', item.id]"><i class="far fa-eye"></i></a></li>-->
+<!--                </ul>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="card-body">-->
+<!--              <a [routerLink]="['/detail/', item.id]" class="h3 text-decoration-none">{{item.name}}</a>-->
+<!--              <p class="text-center mb-0">{{item.price}} VNĐ</p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
         <div class="col-md-4" *ngFor="let item of listClothes?.content">
-          <div class="card mb-4 product-wap rounded-0">
+          <div class="card mb-4 product-wap rounded-0" *ngIf="item">
             <div class="card rounded-0">
-              <img src="{{item.images[0]?.url}}" class="card-img-top" alt="...">
+              <img src="{{item}}" class="card-img-top d-block" height="270px" alt="...">
               <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                 <ul class="list-unstyled">
                   <li><a class="btn btn-success text-white mt-2" [routerLink]="['/detail/', item.id]"><i class="far fa-eye"></i></a></li>
                 </ul>
               </div>
             </div>
-            <div class="card-body">
+            <div class="card-body text-center">
               <a [routerLink]="['/detail/', item.id]" class="h3 text-decoration-none">{{item.name}}</a>
-              <p class="text-center mb-0">{{item.price}} VNĐ</p>
+              <p class="text-center mb-0">{{item.price | number}}<sup>đ</sup></p>
             </div>
           </div>
         </div>
+
       </div>
       <div class="row">
         <div *ngIf="listClothes">

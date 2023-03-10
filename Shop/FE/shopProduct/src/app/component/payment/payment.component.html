@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="row px-xl-5">
+    <div class="col-lg-8">
+      <div class="container-fluid mt-5">
+        <h2 class="text-center">Thông tin giao hàng</h2>
+      </div>
+      <div class="bg-light p-30 mb-5">
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <label>Họ Và Tên</label>
+            <input class="form-control" type="text" value="{{user.name}}">
+          </div>
+          <div class="col-md-6 form-group">
+            <label>E-mail</label>
+            <input class="form-control" type="text" value="{{user.email}}">
+          </div>
+          <div class="col-md-6 form-group">
+            <label>Số điện thoại</label>
+            <input class="form-control" type="text" value="{{user.phoneNumber}}">
+          </div>
+          <div class="col-md-6 form-group">
+            <label>Địa chỉ chi tiết</label>
+            <input class="form-control" type="text" value="{{user.address}}">
+          </div>
+          <div class="col-md-6 form-group">
+            <label>Ghi chú</label>
+            <input class="form-control" type="text" id="note">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="pt-2">
+        <div class="d-flex justify-content-between mt-2">
+          <div class="container-fluid mt-5">
+            <h2 class="text-center">Thanh Toán</h2>
+            <div class="mt-3 mb-3">
+
+              <h5 *ngIf="cart.length != 0">Tổng tiền: {{totalPrice + 45000|number}}<sup>đ</sup></h5>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div style="text-align: center" id="myPaypalButtons"></div>
+    </div>
+  </div>
+</div>

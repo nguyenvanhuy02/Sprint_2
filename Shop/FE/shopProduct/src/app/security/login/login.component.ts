@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
           this.tokenService.setRoleSession(data.roles);
         }
 
-        this.router.navigate(['/home']).then(() => {
+        this.router.navigate(['']).then(() => {
           location.reload();
         });
 

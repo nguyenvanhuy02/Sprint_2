@@ -3,6 +3,7 @@ import {TokenService} from '../../service/security/token.service';
 import {Router} from '@angular/router';
 import {User} from '../../model/user/user';
 import {ToastrService} from 'ngx-toastr';
+import {OrderService} from '../../service/order/order.service';
 
 @Component({
   selector: 'app-header',
@@ -18,11 +19,14 @@ export class HeaderComponent implements OnInit {
   // @ts-ignore
   accountRole: string;
 
+  quantity = 0;
+
 
   constructor(
     private tokenService: TokenService,
     private router: Router,
     private toast: ToastrService,
+    private orderService: OrderService,
   ) {
   }
 
@@ -43,11 +47,19 @@ export class HeaderComponent implements OnInit {
         }
       }
     }
+    this.quantityCount();
+  }
+
+// tslint:disable-next-line:typedef
+  quantityCount() {
+    this.orderService.quantityCount$.subscribe(count => {
+      this.quantity = count;
+    });
   }
 
   logOut(): void {
     this.tokenService.logOut();
-    this.router.navigateByUrl('/home').then(() => {
+    this.router.navigateByUrl('').then(() => {
       location.reload();
     });
   }

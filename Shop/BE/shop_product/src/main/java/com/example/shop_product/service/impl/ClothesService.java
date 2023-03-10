@@ -1,5 +1,7 @@
 package com.example.shop_product.service.impl;
 
+import com.example.shop_product.dto.ClothesDto;
+import com.example.shop_product.dto.IClothesDto;
 import com.example.shop_product.model.product.Clothes;
 import com.example.shop_product.repository.product.IClothesRepository;
 import com.example.shop_product.service.IClothesService;
@@ -30,5 +32,10 @@ public class ClothesService implements IClothesService {
     @Override
     public Clothes findById(Integer id) {
         return clothesRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public Page<IClothesDto> findAllClothes(ClothesDto clothesDto, Pageable pageable) {
+        return clothesRepository.findAllClothesDto(clothesDto,pageable);
     }
 }

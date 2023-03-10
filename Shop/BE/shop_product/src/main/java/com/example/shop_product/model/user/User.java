@@ -21,6 +21,7 @@ public class User {
     private String idCard;
     private String address;
     private boolean deleteStatus;
+    private String gender;
 
     @ManyToOne
     @JoinColumn(name = "id_user_type",referencedColumnName = "id")
@@ -121,5 +122,13 @@ public class User {
 
     public void setOderClothes(Set<OrderClothes> oderClothes) {
         this.oderClothes = oderClothes;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }
