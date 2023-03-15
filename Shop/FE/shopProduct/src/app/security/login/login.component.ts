@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     private toastr: ToastrService,
     private router: Router,
     private authService: AuthService,
-    private tokenService: TokenService,
+    private tokenService: TokenService
   ) {
   }
 
@@ -57,6 +57,8 @@ export class LoginComponent implements OnInit {
         });
 
       }
+      this.toastr.success('Đăng nhập thành công');
+
     }, error => {
 
       const messageRespone: MessageRespone = error;

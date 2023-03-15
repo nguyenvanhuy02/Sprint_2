@@ -69,6 +69,7 @@ export class CartComponent implements OnInit {
     } else {
       this.totalPrice = 0;
     }
+    this.orderService.quantityCount$.next(this.totalQuantity);
   }
 
   // tslint:disable-next-line:typedef

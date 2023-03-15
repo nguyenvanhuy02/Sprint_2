@@ -7,12 +7,12 @@
       <ul class="list-unstyled templatemo-accordion">
         <li class="pb-3">
           <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-            Giới tính
+            Theo danh mục
             <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
           </a>
           <ul class="collapse show list-unstyled pl-3">
-            <li><a class="text-decoration-none" href="#">Nam</a></li>
-            <li><a class="text-decoration-none" href="#">Nữ</a></li>
+            <li><a class="text-decoration-none" href="#">Áo thun</a></li>
+            <li><a class="text-decoration-none" href="#">Áo sơ mi</a></li>
           </ul>
         </li>
         <li class="pb-3">
@@ -32,30 +32,30 @@
       <form *ngIf="rfSearch" [formGroup]="rfSearch" (ngSubmit)="findAll(0)">
         <div class="row">
           <div class="col-md-6">
-<!--            <ul class="list-inline shop-top-menu pb-3 pt-1" formControlName="gender" >-->
-<!--              <li class="list-inline-item"  value="">-->
-<!--                <a  class="h3 text-dark text-decoration-none mr-3"  >Tất Cả | </a>-->
-<!--              </li>-->
-<!--              <li class="list-inline-item" value="Nam">-->
-<!--                <a class="h3 text-dark text-decoration-none mr-3" >Nam | </a>-->
-<!--              </li>-->
-<!--              <li class="list-inline-item" value="Nữ">-->
-<!--                <a  class="h3 text-dark text-decoration-none" >Nữ</a>-->
-<!--              </li>-->
-<!--            </ul>-->
-            <div class="form-floating mb-4 form-inp">
-              <select class="form-select form-select-underlined form-select-underlined" id="floatingPaymentStatus"
-                      formControlName="gender">
-                <option value="">- Tất cả -</option>
-                <option value="Nam">Nam</option>
-                <option value="Nữ">Nữ</option>
+            <ul class="list-inline shop-top-menu pb-3 pt-1 "  formControlName="gender" >
+              <li class="list-inline-item"  value="">
+                <a (click)="setSearch('')" class="h3 text-dark text-decoration-none mr-3"  >Tất Cả | </a>
+              </li>
+              <li class="list-inline-item" value="Nam">
+                <a (click)="setSearch('Nam')" class="h3 text-dark text-decoration-none mr-3" >Nam | </a>
+              </li>
+              <li class="list-inline-item" value="Nữ">
+                <a (click)="setSearch('Nữ')" class="h3 text-dark text-decoration-none" >Nữ</a>
+              </li>
+            </ul>
+<!--            <div class="form-floating mb-4 form-inp">-->
+<!--              <select class="form-select form-select-underlined form-select-underlined" id="floatingPaymentStatus"-->
+<!--                      formControlName="gender">-->
+<!--                <option value="">- Tất cả -</option>-->
+<!--                <option value="Nam">Nam</option>-->
+<!--                <option value="Nữ">Nữ</option>-->
 
-              </select>
-            </div>
+<!--              </select>-->
+<!--            </div>-->
           </div>
           <div class="col-md-6 pb-4">
             <div class="d-flex">
-              <input type="text" class="form-control" formControlName="name" placeholder="Tìm Kiếm...">
+              <input type="text" class="form-control" formControlName="name" placeholder="Tìm Kiếm Theo Tên...">
             </div>
           </div>
         </div>
@@ -81,7 +81,7 @@
         <div class="col-md-4" *ngFor="let item of listClothes?.content">
           <div class="card mb-4 product-wap rounded-0" *ngIf="item">
             <div class="card rounded-0">
-              <img src="{{item}}" class="card-img-top d-block" height="270px" alt="...">
+              <img src="{{item.url}}" class="card-img-top d-block" height="270px" alt="...">
               <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                 <ul class="list-unstyled">
                   <li><a class="btn btn-success text-white mt-2" [routerLink]="['/detail/', item.id]"><i class="far fa-eye"></i></a></li>

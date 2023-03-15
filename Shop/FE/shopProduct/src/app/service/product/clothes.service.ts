@@ -17,7 +17,6 @@ export class ClothesService {
     return this.httpClient.get<PageClothes>(environment.api_url + '?page=' + pageNumber);
   }
   findAllSearch(search: any, pageNumber: number): Observable<PageClothes> {
-    console.log(search);
     return this.httpClient.post<PageClothes>(environment.api_url + '/search' + '?page=' + pageNumber, search);
   }
 

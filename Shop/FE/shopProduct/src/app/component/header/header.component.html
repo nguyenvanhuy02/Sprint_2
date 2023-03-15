@@ -18,12 +18,12 @@
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['clothes']">Sản phẩm</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" *ngIf="checkLogin" [routerLink]="['cart']">Giỏ Hàng</a>
-          </li>
 <!--          <li class="nav-item">-->
-<!--            <a class="nav-link" href="contact.html">Liên hệ</a>-->
+<!--            <a class="nav-link" *ngIf="checkLogin" [routerLink]="['cart']">Giỏ Hàng</a>-->
 <!--          </li>-->
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="checkLogin && accountRole == 'ROLE_ADMIN'">Quản Lý Khách Hàng</a>
+          </li>
         </ul>
       </div>
       <div class="navbar align-self-center d-flex">

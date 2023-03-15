@@ -54,7 +54,7 @@ public class OrderController {
             Payment payment = new Payment();
             payment.setDeleteStatus(true);
             payment.setPaymentStatus(false);
-            payment.setShippingDescription("");
+//            payment.setShippingDescription("Không có ghi chú");
             paymentService.addPayment(payment);
 
 
@@ -65,7 +65,6 @@ public class OrderController {
             orderService.addOrder(orderClothesNew);
 
             OrderClothes orderClothes1 = orderService.getOrder(order.getUser());
-
             OrderDetail orderDetail = new OrderDetail();
             orderDetail.setOrderClothes(orderClothes1);
             orderDetail.setClothes(clothesService.findById(order.getClothes()));
@@ -115,7 +114,7 @@ public class OrderController {
         Payment payment = paymentService.getPaymentByUserId(id);
         payment.setPaymentStatus(true);
         if(note.length() == 0) {
-            payment.setShippingDescription("Khong co ghi chu");
+            payment.setShippingDescription("Không có ghi chú");
         } else {
             payment.setShippingDescription(note);
         }

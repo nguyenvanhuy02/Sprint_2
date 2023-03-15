@@ -31,7 +31,7 @@ export class ClothesComponent implements OnInit {
     this.clothesService.findAllSearch(this.rfSearch.value, pageNumber).subscribe(
       data => {
         this.listClothes = data;
-        console.log('search nè ' + this.rfSearch.value);
+        console.log('search nè ' + data);
       }
     );
   }
@@ -44,15 +44,16 @@ export class ClothesComponent implements OnInit {
     });
   }
 
-// // tslint:disable-next-line:typedef
-//   setSearch(gender: string) {
-//     this.rfSearch.setValue({
-//       name: [this.rfSearch.value.name],
-//       gender: [gender],
-//     });
-//     console.log('maksdoasd' + this.rfSearch.value.name);
-//     console.log(this.rfSearch.value);
-//   }
+// tslint:disable-next-line:typedef
+  setSearch(gender: string) {
+    this.rfSearch.setValue({
+      name: this.rfSearch.value.name,
+      gender,
+    });
+    console.log('maksdoasd' + this.rfSearch.value.name);
+    console.log(this.rfSearch.value);
+    this.findAll(0);
+  }
 
   // tslint:disable-next-line:typedef
   gotoPage(pageNumber: number) {
