@@ -35,10 +35,8 @@ export class CartComponent implements OnInit {
   // tslint:disable-next-line:typedef
   getOrder() {
     this.user = JSON.parse(this.tokenService.getUser());
-    console.log(this.user.id);
     this.orderService.getCart(this.user.id).subscribe(data => {
       this.cart = data;
-      console.log(data);
       for (let i = 0; i < data.length; i++) {
         // @ts-ignore
         // tslint:disable-next-line:radix
